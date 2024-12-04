@@ -1,4 +1,3 @@
-
 public abstract class Tabuleiro_base {
     private char tabuleiro[][] = new char[3][3];
     private Jogador p1, p2;
