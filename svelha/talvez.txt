@@ -1,0 +1,18 @@
+else if(
+                    //espaços horizontais:
+                    l == 0 || // * 
+                    l == ESPACO + qtCharCaractere || // *xxxxx*
+                    l == ESPACO*2 + qtCharCaractere + GROSSURALINHA || // *xxxxx*|*
+                    l == ESPACO*3 + qtCharCaractere*2 + GROSSURALINHA || // *xxxxx*|*xxxxx*
+                    l == ESPACO*4 + qtCharCaractere*2 + GROSSURALINHA*2 || // *xxxxx*|*xxxxx*|*
+                    l == ESPACO*5 + qtCharCaractere*3 + GROSSURALINHA*2 ||  // *xxxxx*|*xxxxx*|*xxxxx*
+                    //espaços verticais:
+                    c == 0 || 
+                    c == ESPACO + qtCharCaractere || 
+                    c == ESPACO*2 + qtCharCaractere + GROSSURALINHA || 
+                    c == ESPACO*3 + qtCharCaractere*2 + GROSSURALINHA || 
+                    c == ESPACO*4 + qtCharCaractere*2 + GROSSURALINHA*2 ||
+                    c == ESPACO*5 + qtCharCaractere*3 + GROSSURALINHA*2){
+
+                        System.out.print('*');
+                    }
