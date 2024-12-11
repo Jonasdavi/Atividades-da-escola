@@ -3,9 +3,6 @@ public class Tabuleiro extends Tabuleiro_base {
 
     public Tabuleiro(Jogador j1, Jogador j2){
         super(j1, j2);
-        
-        this.reiniciarTabuleiro();
-        
     }
 
     @Override

@@ -4,7 +4,7 @@ public abstract class Tabuleiro_base {
     
     public Tabuleiro_base(Jogador p1, Jogador p2){
         this.p1 = p1;
-        this.p2 = p2;
+        this.p2 = p2; 
         reiniciarTabuleiro();
     }
 
