@@ -16,5 +16,8 @@ public class App {
             }
             
         }while(t.getNumJogada()<9 && vencedor=='*');
+
+        TUI tui= new TUI();
+        tui.desenheTabuleiro(t.getTabuleiro());
     }
 }
