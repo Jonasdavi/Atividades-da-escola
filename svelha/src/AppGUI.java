@@ -28,6 +28,9 @@ public class AppGUI {
             jPrinc.add(jp[i], i);
         }
 
+        jb[0].setIcon(imgX);
+        jb[1].setIcon(imgO);
+
         jPrinc.setSize(600,600);
         jPrinc.setVisible(true);
     }
