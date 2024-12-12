@@ -1,20 +1,20 @@
 import javax.swing.*;
-import java.awt.FlowLayout;
+import java.awt.*;
 
 public class App{
-    public static void main(String[] args) {
-        JFrame jPrinc= new JFrame("Conversor");
+    public static void main(String[] args, String string, Icon icon) {
+        JFrame jPrinc= new JFrame("GUI jogo da velha");
+        jPrinc.setSize(600,300);
+        Icon imgX= new ImageIcon("x.png");
+        Icon imgO= new ImageIcon("bola.png");
 
-        JLabel l1= new JLabel("Dado a ser convertido: ");
-        JTextField tf= new JTextField(5);
+        JPanel jp= new JPanel();
+        jp.setLayout(new GridLayout(3,3));
+        JButton teste= new JButton(string, imgX);
 
-        //troca o layout do JFrame para FlowLaout:
-        FlowLayout fLayout= new FlowLayout(FlowLayout.LEFT);
-        jPrinc.getContentPane().setLayout(fLayout);
+        jp.add(teste);
 
-        jPrinc.setSize(600, 300);
+        jPrinc.add(jp);
         jPrinc.setVisible(true);
-        jPrinc.add(l1);
-        jPrinc.add(tf);
     }
 }
