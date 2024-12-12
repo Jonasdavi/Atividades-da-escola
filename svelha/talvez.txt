@@ -16,3 +16,55 @@ else if(
 
                         System.out.print('*');
                     }
+
+
+
+
+                    //linhas do desenho:
+                    if(l== ESPACO*2 + qtCharCaractere || l== ESPACO*4 + qtCharCaractere*2 + 1
+                    || c== ESPACO*2 + qtCharCaractere || c== ESPACO*4 + qtCharCaractere*2 + 1){
+                        System.out.print('#');
+                    }
+
+                    //desenhos do caracteres
+                    /*else if(
+                    l>ESPACO*2+qtCharCaractere*1+GROSSURALINHA*1 && l<ESPACO*3+qtCharCaractere*2+GROSSURALINHA*1 &&  
+                    c>ESPACO*0+qtCharCaractere*0+GROSSURALINHA*0 && c<ESPACO*1+qtCharCaractere*1+GROSSURALINHA*0
+                    
+                    /*
+                    000 110 [0]
+                    000 110 [0]
+
+                    000 110 [0]
+                    211 321 [1]
+
+                    000 110 [0]
+                    422 532 [2]
+
+
+                    000 110[0]   0*2 | 0 | 0  || 0+1+0*1 | 0+1 | 0
+                    211 321[1]   1*2 | 1 | 1  || 1+1+1*1 | 1+1 | 1
+                    422 532[2]   2*2 | 2 | 2  || 2+1+2*1 | 2+1 | 2
+
+                                 i*2 | i | i  || i*1+i  |  i+1 | i   -> todas posicoes
+
+                     */
+                    /*
+                    ){
+
+                        System.out.print('*');
+                    }
+                    */
+                    else if(l>ESPACO*(l1*2) + qtCharCaractere*(l1) + GROSSURALINHA*(l1) && l<=ESPACO*(l1*1+l1) + qtCharCaractere*(l1+1)+GROSSURALINHA*(l1) &&  
+                    c>ESPACO*(c1*2) + qtCharCaractere*(c1) + GROSSURALINHA*(c1) && c<=ESPACO*(c1*1+c1)+qtCharCaractere*(c1+1)+GROSSURALINHA*(c1)){
+                        if(tb[l1][c1]=='aX' && l==c){
+                            System.out.print('X');
+                        }
+                        else{
+                            System.out.print('0');
+                        }
+                    }
+
+                    else{
+                        System.out.print('*');
+                    }

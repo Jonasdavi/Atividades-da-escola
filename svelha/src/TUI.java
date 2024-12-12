@@ -4,91 +4,69 @@ public class TUI implements TabUI{
 
     private final int GROSSURALINHA= 1; //quantidades de caracteres da grossura da linha do desenho
     private final int ESPACO= 1; //quantidade de espaço ao redor do desenho do caractere X ou O
+
+    private char[][] tabTui;
     
     public TUI(){
         qtCharCaractere=5;
 
         tamanhoDesenho= qtCharCaractere*3 + ESPACO*6 + GROSSURALINHA*2;
+
+        tabTui= new char[tamanhoDesenho][tamanhoDesenho];
+        reiniciarTui();
     }
 
 
     @Override
     public void desenheTabuleiro(char[][] tab) {
-        if(tab.length==3 && tab[0].length==3){
-            
-            for(int l=0; l<tamanhoDesenho; l++){
-                for(int c=0; c<tamanhoDesenho; c++){
-                    int l1, c1;
-                    
-                    //relacionando as posicoes do desenho com as posicoes da matriz do tabuleiro
-                    if(l>0 && l<6){
-                        l1=0;
+        for (int i=0; i < 50; i++) {
+            System.out.println();
+        }
+
+        for (int l = 0; l < tab.length; l++) {
+            for (int c = 0; c < tab.length; c++) {
+                desenhePosicao(l, c, tab[l][c]);
+            }
+        }
+
+        for (int l = 0; l < tabTui.length; l++) {
+            for (int c = 0; c < tabTui.length; c++) {
+                System.out.print(tabTui[l][c]);
+            }
+            System.out.println();
+        }
+        
+    }
+
+    public void desenhePosicao(int linha, int coluna, char caractere){
+        if(caractere=='X'){
+            for(int i=0; i<qtCharCaractere; i++){
+                tabTui[1+(qtCharCaractere+3)*linha+i][1+(qtCharCaractere+3)*coluna+i]= caractere;
+                tabTui[qtCharCaractere+(qtCharCaractere+3)*linha-i][1+(qtCharCaractere+3)*coluna+i]= caractere;
+            }
+        }
+        else if(caractere=='O'){
+            for(int l=0; l<qtCharCaractere; l++){
+                for (int c=0; c<qtCharCaractere; c++) {
+                    if(l==0 && c!=0 && c!=qtCharCaractere-1 || l==qtCharCaractere-1 && c!=0 && c!=qtCharCaractere-1|| c==0 && l!=0 && l!=qtCharCaractere-1|| c==qtCharCaractere-1 && l!=0 && l!=qtCharCaractere-1){
+                        tabTui[l+1+(qtCharCaractere+3)*linha][c+1+(qtCharCaractere+3)*coluna]= caractere;
                     }
-                    else if(l>8 && l<14){
-                        l1=1;
-                    }
-                    else{
-                        l1=2;
-                    }
-
-                    if(c>0 && c<6){
-                        c1=0;
-                    }
-                    else if(c>8 && c<14){
-                        c1=1;
-                    }
-                    else{
-                        c1=2;
-                    }
-                        
-                    //linhas do desenho:
-                    if(l== ESPACO*2 + qtCharCaractere || l== GROSSURALINHA + ESPACO*4 + qtCharCaractere*2
-                    || c== ESPACO*2 + qtCharCaractere || c== ESPACO*4 + qtCharCaractere*2 + 1){
-                        System.out.print('#');
-                    }
-
-                    //desenhos do caracteres
-                    /*else if(
-                    l>ESPACO*2+qtCharCaractere*1+GROSSURALINHA*1 && l<ESPACO*3+qtCharCaractere*2+GROSSURALINHA*1 &&  
-                    c>ESPACO*0+qtCharCaractere*0+GROSSURALINHA*0 && c<ESPACO*1+qtCharCaractere*1+GROSSURALINHA*0
-                    
-                    /*
-                    000 110 [0]
-                    000 110 [0]
-
-                    000 110 [0]
-                    211 321 [1]
-
-                    000 110 [0]
-                    422 532 [2]
-
-
-                    000 110[0]   0*2 | 0 | 0  || 0+1+0*1 | 0+1 | 0
-                    211 321[1]   1*2 | 1 | 1  || 1+1+1*1 | 1+1 | 1
-                    422 532[2]   2*2 | 2 | 2  || 2+1+2*1 | 2+1 | 2
-
-                                 i*2 | i | i  || i*1+i  |  i+1 | i   -> todas posicoes
-
-                     */
-                    /*
-                    ){
-
-                        System.out.print('*');
-                    }
-                    */
-                    else if(l>ESPACO*(l1*2) + qtCharCaractere*(l1) + GROSSURALINHA*(l1) && l<=ESPACO*(l1*1+l1) + qtCharCaractere*(l1+1)+GROSSURALINHA*(l1) &&  
-                    c>ESPACO*(c1*2) + qtCharCaractere*(c1) + GROSSURALINHA*(c1) && c<=ESPACO*(c1*1+c1)+qtCharCaractere*(c1+1)+GROSSURALINHA*(c1)){
-                        System.out.print(0);
-                    }
-                    
-                    else{
-                        System.out.print('*');
-                    }
-
-
                 }
+            }
+        }
+    }
 
-                System.out.println();
+    public void reiniciarTui(){
+        for (int l = 0; l < tabTui.length; l++) {
+            for (int c = 0; c < tabTui.length; c++) {
+                //linhas do desenho:
+                if(l== ESPACO*2 + qtCharCaractere || l== ESPACO*4 + qtCharCaractere*2 + 1
+                || c== ESPACO*2 + qtCharCaractere || c== ESPACO*4 + qtCharCaractere*2 + 1){
+                    tabTui[l][c]='#';
+                }
+                else{
+                    tabTui[l][c]=' ';
+                }
             }
         }
     }
