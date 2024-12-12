@@ -5,6 +5,7 @@ public class App {
 
         Tabuleiro t=  new Tabuleiro(j, j2);
         TUI tui= new TUI();
+        //TabGUI gui= new TabGUI();
 
         char vencedor= '*';
         do { 
