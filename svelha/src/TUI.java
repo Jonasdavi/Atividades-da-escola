@@ -8,7 +8,7 @@ public class TUI implements TabUI{
     private char[][] tabTui;
     
     public TUI(){
-        qtCharCaractere=3;
+        qtCharCaractere=5;
 
         tamanhoDesenho= qtCharCaractere*3 + ESPACO*6 + GROSSURALINHA*2;
 
@@ -19,9 +19,6 @@ public class TUI implements TabUI{
 
     @Override
     public void desenheTabuleiro(char[][] tab) {
-        for (int i=0; i < 50; i++) {
-            System.out.println();
-        }
 
         for (int l = 0; l < tab.length; l++) {
             for (int c = 0; c < tab.length; c++) {

@@ -11,6 +11,12 @@ public class App {
             if(t.jogar()){
                 //t.exibirTabuleiro();
                 Thread.sleep(1100);
+
+                for (int i=0; i < 50; i++) {
+                    System.out.println();
+                }
+                
+                System.out.println("Jogada: " + t.getNumJogada());
                 tui.desenheTabuleiro(t.getTabuleiro());
                 
                 if(t.getNumJogada()>4){
