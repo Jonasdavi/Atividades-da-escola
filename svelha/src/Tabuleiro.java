@@ -1,9 +1,13 @@
 public class Tabuleiro extends Tabuleiro_base {
     private Jogador iniciante, atual;
     private int numJogada;
+    private TabGUI gui;
 
     public Tabuleiro(Jogador j1, Jogador j2){
+        gui= new TabGUI();
+
         super(j1, j2);
+
 
         setIniciante(1);
         numJogada=0;
@@ -38,6 +42,8 @@ public class Tabuleiro extends Tabuleiro_base {
         if(linha>=0 && linha<3 && coluna>=0 && coluna<3){
             if(this.getTabuleiro()[linha][coluna]=='*'){
                 this.getTabuleiro()[linha][coluna]= atual.getMarcador();
+                gui.addCaractere(linha, coluna, atual.getMarcador());
+
                 numJogada++;
                 atual = atual==getJogador1()? getJogador2() : getJogador1();
                 return true;
@@ -78,6 +84,8 @@ public class Tabuleiro extends Tabuleiro_base {
                 getTabuleiro()[i][j]= '*';
             }
         }
+
+        gui.zerarTabuleiroGUI();
 
     }
 

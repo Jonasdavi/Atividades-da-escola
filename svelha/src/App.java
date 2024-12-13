@@ -5,13 +5,12 @@ public class App {
 
         Tabuleiro t=  new Tabuleiro(j, j2);
         TUI tui= new TUI();
-        //TabGUI gui= new TabGUI();
 
         char vencedor= '*';
         do { 
             if(t.jogar()){
                 //t.exibirTabuleiro();
-                Thread. sleep(1100);
+                Thread.sleep(1100);
                 tui.desenheTabuleiro(t.getTabuleiro());
                 
                 if(t.getNumJogada()>4){
@@ -26,5 +25,6 @@ public class App {
         else{
             System.out.println("Vencedor: " + vencedor);
         }
+
     }
 }
