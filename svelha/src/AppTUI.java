@@ -17,7 +17,6 @@ public class AppTUI {
             jPrinc.add(jp[i]);
         }
 
-        jp[0].setBackground(Color.BLACK);
         jp[0].add(jb);
 
         jPrinc.setSize(600,600);
