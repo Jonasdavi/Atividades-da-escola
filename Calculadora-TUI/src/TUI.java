@@ -8,7 +8,7 @@ public class TUI extends Calculadora implements CalcUI {
     private final int MENUINICIAL= 0;
     private final int MENUN1= 1;
     private final int MENUN2= 2;
-    private final int MENURESULTADO= 03;
+    private final int MENURESULTADO= 3;
 
 
     private char[][] matriz;
