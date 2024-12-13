@@ -8,7 +8,7 @@ public class TUI implements TabUI{
     private char[][] tabTui;
     
     public TUI(){
-        qtCharCaractere=3;
+        qtCharCaractere=7;
 
         tamanhoDesenho= qtCharCaractere*3 + ESPACO*6 + GROSSURALINHA*2;
 
