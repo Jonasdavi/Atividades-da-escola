@@ -136,11 +136,15 @@ public class TUI extends Calculadora implements CalcUI {
                 
 
             } 
-            else if(operacao >= 2 && operacao <=5){
+            else {
                 calculadora.setOperacao(operacao-1);
                 calculadora.realizarOperacao();
-                this.atualizarDisplay(MENURESULTADO);
-                this.exibirMenu();
+                
+                if(operacao >= 2 && operacao <=5){
+                    this.atualizarDisplay(MENURESULTADO);
+                    this.exibirMenu();
+                }
+                
             }
             
         }
