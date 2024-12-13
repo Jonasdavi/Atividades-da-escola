@@ -34,6 +34,8 @@ public class TabGUI {
         
         jPrinc.setSize(600,600);
         jPrinc.setVisible(true);
+
+        this.zerarTabuleiroGUI();
     }
 
     public void addCaractere(int linha, int coluna, char caractere){

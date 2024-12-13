@@ -4,8 +4,6 @@ public class Tabuleiro extends Tabuleiro_base {
     private TabGUI gui;
 
     public Tabuleiro(Jogador j1, Jogador j2){
-        gui= new TabGUI();
-
         super(j1, j2);
 
 
@@ -85,8 +83,12 @@ public class Tabuleiro extends Tabuleiro_base {
             }
         }
 
-        gui.zerarTabuleiroGUI();
-
+        if(numJogada==0){
+            gui= new TabGUI();
+        }
+        else{
+            gui.zerarTabuleiroGUI();
+        }
     }
 
     @Override

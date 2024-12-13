@@ -40,6 +40,7 @@ public class TUI extends Calculadora implements CalcUI {
                 }
             }
         }
+
         /*
         // adicionando as bordas da matriz
         for (int i = 0; i < colunas; i++) {
@@ -174,7 +175,7 @@ public class TUI extends Calculadora implements CalcUI {
         }
         //textoL1="qual opcao?abcde";
 
-        //verificar se o tamanho do texto nao estrapola a largura do display
+        //verificar se o tamanho do texto nao extrapola a largura do display
         int LIMITECHARDISPLAY= 15;
         if(textoL1.length() > LIMITECHARDISPLAY){
             //excluir os caracteres da esquerda apos o limite suportado pelo display
