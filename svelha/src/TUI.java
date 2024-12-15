@@ -1,6 +1,6 @@
 public class TUI implements TabUI{
     private int qtCharCaractere; //quantidade de char de cada caractere para representar X ou O em relacao a linha ou coluna
-    private int tamanhoDesenho; //quantidade de caracteres do desenho total
+    private int tamanhoDesenho; //quantidade de colunas ou linhas do desenho total
 
     private final int GROSSURALINHA= 1; //quantidades de caracteres da grossura da linha do desenho
     private final int ESPACO= 1; //quantidade de espaço ao redor do desenho do caractere X ou O
@@ -8,7 +8,8 @@ public class TUI implements TabUI{
     private char[][] tabTui;
     
     public TUI(){
-        qtCharCaractere=5;
+        qtCharCaractere=5; //definindo tamanho do desenho que representará 'X' ou 'O'
+
 
         tamanhoDesenho= qtCharCaractere*3 + ESPACO*6 + GROSSURALINHA*2;
 
